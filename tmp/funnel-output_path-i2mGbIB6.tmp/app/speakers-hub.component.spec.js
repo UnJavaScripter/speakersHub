@@ -1,1 +1,0 @@
-/home/kanuz/code/angularattack2016-angularjsco/tmp/broccoli_type_script_compiler-cache_path-362CcrTY.tmp/src/app/speakers-hub.component.spec.js

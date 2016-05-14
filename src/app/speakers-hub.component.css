@@ -1,0 +1,41 @@
+button {
+  border: none;
+  background: lightgray;
+  color: white;
+  font-size: 1em;
+  padding: 0.8em;
+  border-radius: 3px;
+  cursor: pointer;
+}
+
+
+.hero {
+  background: #c0392b;
+  color: white;
+  height: 30em;
+  padding: 1em;
+}
+
+.hero>h2 {
+  font-size: 3em;
+}
+
+.button-cta {
+    font-size: 1.4em;
+    background: #1D1D29;
+    color: white;
+}
+
+.button-cta:active {
+  background-color: #1D1D29;
+}
+
+
+.secondary-action {
+  padding-top: 2em;
+}
+
+.secondary-action>button {
+  background: #EF5C54;
+  color: white;
+}

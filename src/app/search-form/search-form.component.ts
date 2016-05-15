@@ -27,7 +27,7 @@ export class SearchFormComponent implements OnInit {
     if (!this.selectedCountry){
       return
     }
-    
+
     const queryObservable = this.af.database.list('/users/', {
       query: {
         orderByChild: 'location',
@@ -39,10 +39,12 @@ export class SearchFormComponent implements OnInit {
     .subscribe(
       data => {
         this.results = data.filter(result => {
-          if (this.slectedSubject){
-            return result.subject === this.slectedSubject;
-          }else{
-            return result.subject;
+          if (result.subject) {
+            if (this.slectedSubject){
+              return result.subject === this.slectedSubject;
+            }else{
+              return result.subject;
+            }
           }
         })
       },

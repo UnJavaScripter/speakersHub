@@ -1,1 +1,0 @@
-{"version":3,"file":"index.js","sourceRoot":"","sources":["index.ts"],"names":[],"mappings":";AAAA,4BAA0B,eAAe,CAAC;AAAlC,gDAAkC;AAC1C,uCAAsC,0BAA0B,CAAC;AAAzD,mFAAyD","sourcesContent":["export {environment} from './environment';\nexport {SpeakersHubAppComponent} from './speakers-hub.component';\n"]}

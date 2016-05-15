@@ -36,6 +36,8 @@ var barrels = [
     '+app',
     'app/+main',
     'app/signup-form',
+    'app/+find',
+    'app/search-form',
 ];
 var cliSystemConfigPackages = {};
 barrels.forEach(function (barrelName) {

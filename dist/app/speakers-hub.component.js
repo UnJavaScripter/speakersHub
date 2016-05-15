@@ -12,6 +12,7 @@ var core_1 = require('@angular/core');
 var _signup_1 = require('./+signup');
 var router_1 = require('@angular/router');
 var _main_1 = require('./+main');
+var _find_1 = require('./+find');
 var SpeakersHubAppComponent = (function () {
     function SpeakersHubAppComponent() {
     }
@@ -26,7 +27,8 @@ var SpeakersHubAppComponent = (function () {
         }),
         router_1.Routes([
             { path: '/signup', component: _signup_1.SignupComponent },
-            { path: '/', component: _main_1.MainComponent }
+            { path: '/', component: _main_1.MainComponent },
+            { path: '/find', component: _find_1.FindComponent }
         ]), 
         __metadata('design:paramtypes', [])
     ], SpeakersHubAppComponent);

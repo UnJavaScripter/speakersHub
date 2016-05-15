@@ -1,0 +1,68 @@
+<div layout="column" layout-align="center center">
+
+  <div class="card" layout-xs="column" layout="row" layout-align-xs="center center" layout-align="space-between center" flex>
+    
+    <div flex-xs="100" flex="25" layout="column">
+      <label for="country-list">Country</label>
+      <select name="country-list" id="country-list" [(ngModel)]="selectedCountry">
+        <option *ngFor="let country of countries" value="{{country}}">{{country}}</option>
+      </select>
+    </div>
+    
+    <div flex-xs="100" flex-offset="5" flex="45" layout="column">
+      <label for="subject">Subject</label>
+      <input type="text" [(ngModel)]="slectedSubject" placeholder="Gremlin care, world domination...">
+    </div>
+    
+    <button (click)="find()" flex-xs="100">Find</button>
+  </div>
+</div>
+
+<div class="results">
+
+  <div class="card" flex *ngFor="let result of results" layout="column">
+    
+    <div class="card-content" layout="row" layout-align="space-around center">
+      
+      <div class="user-data" layout="column">
+
+        <div>
+          <h3>
+            {{result.name}}
+          </h3>
+        </div>
+
+        <div>
+          <h3>
+            {{result.email}}
+          </h3>
+        </div>
+
+        <div>
+          <h3>
+            {{result.location}}
+          </h3>
+        </div>
+
+        <div>
+          <h3>
+            {{result.subject}}
+          </h3>
+        </div>
+
+      </div>
+      
+
+      <div>
+        <img src="{{result.avatar}}" class="avatar avatar-sm" alt="{{result.name}}'s avatar">
+      </div>
+
+
+    </div>
+
+  <!-- <div class="card-actions" layout="row" layout-align="end center">
+    <button (click)="updateData(formData)">Update data</button>
+  </div> -->
+  
+  </div>
+</div>

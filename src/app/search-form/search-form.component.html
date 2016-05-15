@@ -20,8 +20,12 @@
 
 <div class="results">
 
-  <div class="card" flex *ngFor="let result of results" layout="column">
-    
+  <div class="card" *ngIf="results && results.length < 1" layout="column" layout-align="center center">
+    Sorry, I couldn't find anyone within that location/knowing that subject.
+  </div>
+  <div class="card" flex *ngFor="let result of results; let i = index" layout="column">
+  
+
     <div class="card-content" layout="row" layout-align="space-around center">
       
       <div class="user-data" layout="column">

@@ -21,13 +21,25 @@ var SearchFormComponent = (function () {
     };
     SearchFormComponent.prototype.find = function () {
         var _this = this;
+        if (!this.selectedCountry) {
+            return;
+        }
         var queryObservable = this.af.database.list('/users/', {
             query: {
                 orderByChild: 'location',
                 equalTo: this.selectedCountry,
             }
         })
-            .subscribe(function (data) { return _this.results = data; }, function (err) { return console.log(err); }, function () { return console.log('Completed!'); });
+            .subscribe(function (data) {
+            _this.results = data.filter(function (result) {
+                if (_this.slectedSubject) {
+                    return result.subject === _this.slectedSubject;
+                }
+                else {
+                    return result.subject;
+                }
+            });
+        }, function (err) { return console.log(err); }, function () { return console.log('Completed!'); });
     };
     SearchFormComponent = __decorate([
         core_1.Component({

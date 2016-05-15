@@ -5,5 +5,7 @@ var _1 = require('./app/');
 if (_1.environment.production) {
     core_1.enableProdMode();
 }
-platform_browser_dynamic_1.bootstrap(_1.SpeakersHubAppComponent);
+platform_browser_dynamic_1.bootstrap(_1.SpeakersHubAppComponent, [
+    core_1.provide(Window, { useValue: window })
+]);
 //# sourceMappingURL=main.js.map

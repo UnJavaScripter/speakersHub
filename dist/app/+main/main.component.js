@@ -9,29 +9,23 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 var core_1 = require('@angular/core');
-var _signup_1 = require('./+signup');
 var router_1 = require('@angular/router');
-var _main_1 = require('./+main');
-var SpeakersHubAppComponent = (function () {
-    function SpeakersHubAppComponent() {
-        this.title = 'speakers-hub works!';
+var MainComponent = (function () {
+    function MainComponent() {
     }
-    SpeakersHubAppComponent = __decorate([
+    MainComponent.prototype.ngOnInit = function () {
+    };
+    MainComponent = __decorate([
         core_1.Component({
             moduleId: module.id,
-            selector: 'speakers-hub-app',
-            templateUrl: 'speakers-hub.component.html',
-            styleUrls: ['speakers-hub.component.css'],
+            selector: 'app-main',
+            templateUrl: 'main.component.html',
+            styleUrls: ['main.component.css', '../speakers-hub.component.css'],
             directives: [router_1.ROUTER_DIRECTIVES],
-            providers: [router_1.ROUTER_PROVIDERS]
-        }),
-        router_1.Routes([
-            { path: '/signup', component: _signup_1.SignupComponent },
-            { path: '/', component: _main_1.MainComponent }
-        ]), 
+        }), 
         __metadata('design:paramtypes', [])
-    ], SpeakersHubAppComponent);
-    return SpeakersHubAppComponent;
+    ], MainComponent);
+    return MainComponent;
 }());
-exports.SpeakersHubAppComponent = SpeakersHubAppComponent;
-//# sourceMappingURL=speakers-hub.component.js.map
+exports.MainComponent = MainComponent;
+//# sourceMappingURL=main.component.js.map

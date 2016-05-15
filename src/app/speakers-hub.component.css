@@ -1,4 +1,5 @@
-button {
+button,
+a.button-like {
   border: none;
   background: lightgray;
   color: white;
@@ -6,36 +7,9 @@ button {
   padding: 0.8em;
   border-radius: 3px;
   cursor: pointer;
+  text-decoration: none;
 }
 
-
-.hero {
-  background: #c0392b;
-  color: white;
-  height: 30em;
-  padding: 1em;
-}
-
-.hero>h2 {
-  font-size: 3em;
-}
-
-.button-cta {
-    font-size: 1.4em;
-    background: #1D1D29;
-    color: white;
-}
-
-.button-cta:active {
-  background-color: #1D1D29;
-}
-
-
-.secondary-action {
-  padding-top: 2em;
-}
-
-.secondary-action>button {
-  background: #EF5C54;
-  color: white;
+.text-center {
+  text-align: center;
 }

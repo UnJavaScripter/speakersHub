@@ -1,33 +1,49 @@
-<p>
-  signup-form works!... kinda {{userData}}
-  <br>
-  {{userData.name}}
-</p>
+<div layout="row" layout-align="center center">
 
-<form>
+  <div class="card" flex="80" layout="column">
+    
+    <div class="card-content" layout="row" layout-align="space-around center">
+      
+      <div class="user-data" layout="column">
 
-  <div class="form-input">
-    <label for="name">Name</label>
-    <div>
-      {{userData.name}}
+        <div>
+          <h3>
+            {{userData.name}}
+          </h3>
+        </div>
+
+        <div>
+          <h3>
+            {{userData.email}}
+          </h3>
+        </div>
+
+        <div layout="column">
+          <label for="location">Where are yout located? (city, country)</label>
+          <select name="" id="" [(ngModel)]="formData.location">
+            <option *ngFor="let country of countries" value="{{country}}">{{country}}</option>
+          </select>
+        </div>
+
+        <div layout="column">
+          <label for="subject">Which subject do you feel confortable speaking of?</label>
+          <input name="subject" type="text" placeholder="Knitting, programming, advertising..." [(ngModel)]="formData.subject">
+        </div>
+
+      </div>
+      
+
+      <div class="user-avatar">
+        <img src="{{userData.avatar}}" class="avatar" alt="{{userData.name}}'s avatar">
+      </div>
+
+
     </div>
-  </div>
 
-  <div class="form-input">
-    <label for="email">Email</label>
-    <div>
-      {{userData.email}}
+    <div class="card-actions" layout="row" layout-align="end center">
+      <button (click)="updateData(formData)">Update data</button>
     </div>
+    
   </div>
 
-  <div class="form-input">
-    <label for="location">Where are yout located? (city, country)</label>
-    <input name="location" type="text" placeholder="City, Country">
-  </div>
-
-  <div class="form-input">
-    <label for="subject">Which subject do you feel confortable speaking of?</label>
-    <input name="subject" type="text" placeholder="Knitting, programming, advertising...">
-  </div>
-
-</form>
+</div>

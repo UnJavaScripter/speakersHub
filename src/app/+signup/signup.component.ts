@@ -6,7 +6,7 @@ import { SignupFormComponent } from '../signup-form';
   moduleId: module.id,
   selector: 'app-signup',
   templateUrl: 'signup.component.html',
-  styleUrls: ['signup.component.css'],
+  styleUrls: ['signup.component.css', '../speakers-hub.component.css'],
   directives: [SignupFormComponent]
 })
 
@@ -15,30 +15,26 @@ export class SignupComponent implements OnInit {
 
   userAuth: any = {};
 
-  item;
-
   constructor(public af: AngularFire) {
-    this.item = af.database.object('/item');
-    const itemObservable = af.database.object('/item');
-    itemObservable.set({ name: 'new name!' });
 
-    this.firebaseLogin_google(af);
+    this.af.auth.subscribe(auth => {
+      if (auth){
+        this.userAuth.name = auth.google.displayName;
+        this.userAuth.email = auth.google.email;
+        this.userAuth.avatar = auth.google.profileImageURL;
+        this.userAuth.id = auth.uid;
+      }
+    });
+    
+    this.firebaseLogin_google();
   }
   
   ngOnInit() {
   }
 
-  firebaseLogin_google(af: AngularFire) {
-    console.log("Wil prompt");
-    af.auth.subscribe(auth => {
-      if (auth){
-        this.userAuth.name = auth.google.displayName;
-        this.userAuth.email = auth.google.email;
-        this.userAuth.avatar = auth.google.profileImageURL;
-      }
-    });
+  firebaseLogin_google() {
     
-    af.auth.login({
+    this.af.auth.login({
       provider: AuthProviders.Google,
       method: AuthMethods.Popup,
       scope: ["email"]

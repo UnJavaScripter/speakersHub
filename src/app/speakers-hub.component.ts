@@ -16,5 +16,4 @@ import { MainComponent } from './+main';
   {path: '/', component: MainComponent}
 ])
 export class SpeakersHubAppComponent {
-  title = 'speakers-hub works!';
 }

@@ -13,26 +13,23 @@ var angularfire2_1 = require('angularfire2');
 var signup_form_1 = require('../signup-form');
 var SignupComponent = (function () {
     function SignupComponent(af) {
+        var _this = this;
         this.af = af;
         this.userAuth = {};
-        this.item = af.database.object('/item');
-        var itemObservable = af.database.object('/item');
-        itemObservable.set({ name: 'new name!' });
-        this.firebaseLogin_google(af);
-    }
-    SignupComponent.prototype.ngOnInit = function () {
-    };
-    SignupComponent.prototype.firebaseLogin_google = function (af) {
-        var _this = this;
-        console.log("Wil prompt");
-        af.auth.subscribe(function (auth) {
+        this.af.auth.subscribe(function (auth) {
             if (auth) {
                 _this.userAuth.name = auth.google.displayName;
                 _this.userAuth.email = auth.google.email;
                 _this.userAuth.avatar = auth.google.profileImageURL;
+                _this.userAuth.id = auth.uid;
             }
         });
-        af.auth.login({
+        this.firebaseLogin_google();
+    }
+    SignupComponent.prototype.ngOnInit = function () {
+    };
+    SignupComponent.prototype.firebaseLogin_google = function () {
+        this.af.auth.login({
             provider: angularfire2_1.AuthProviders.Google,
             method: angularfire2_1.AuthMethods.Popup,
             scope: ["email"]
@@ -43,7 +40,7 @@ var SignupComponent = (function () {
             moduleId: module.id,
             selector: 'app-signup',
             templateUrl: 'signup.component.html',
-            styleUrls: ['signup.component.css'],
+            styleUrls: ['signup.component.css', '../speakers-hub.component.css'],
             directives: [signup_form_1.SignupFormComponent]
         }), 
         __metadata('design:paramtypes', [angularfire2_1.AngularFire])

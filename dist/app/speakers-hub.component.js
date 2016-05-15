@@ -14,7 +14,6 @@ var router_1 = require('@angular/router');
 var _main_1 = require('./+main');
 var SpeakersHubAppComponent = (function () {
     function SpeakersHubAppComponent() {
-        this.title = 'speakers-hub works!';
     }
     SpeakersHubAppComponent = __decorate([
         core_1.Component({

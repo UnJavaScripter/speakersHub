@@ -1,6 +1,16 @@
   
 <div *ngIf="!userAuth.name">
-  Please log in using a third party provider (check your browser's popup policy) or try again.
+  <p>
+    Please log in using a third party provider
+  </p>
+  <p>
+    If you don't see a login request please check your browser's popup policy  
+  </p>
+
+  <p>
+    or try again: <button (click)="firebaseLogin_google()">Login with Google</button>
+  </p>
+  
 </div>
 
 <app-signup-form [userData]="userAuth" *ngIf="userAuth.name"></app-signup-form>

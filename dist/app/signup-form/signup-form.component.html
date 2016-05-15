@@ -1,0 +1,33 @@
+<p>
+  signup-form works!... kinda {{userData}}
+  <br>
+  {{userData.name}}
+</p>
+
+<form>
+
+  <div class="form-input">
+    <label for="name">Name</label>
+    <div>
+      {{userData.name}}
+    </div>
+  </div>
+
+  <div class="form-input">
+    <label for="email">Email</label>
+    <div>
+      {{userData.email}}
+    </div>
+  </div>
+
+  <div class="form-input">
+    <label for="location">Where are yout located? (city, country)</label>
+    <input name="location" type="text" placeholder="City, Country">
+  </div>
+
+  <div class="form-input">
+    <label for="subject">Which subject do you feel confortable speaking of?</label>
+    <input name="subject" type="text" placeholder="Knitting, programming, advertising...">
+  </div>
+
+</form>

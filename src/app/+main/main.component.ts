@@ -11,7 +11,10 @@ import { Routes, ROUTER_DIRECTIVES} from '@angular/router';
 
 
 export class MainComponent implements OnInit {
+
+
   constructor() {
+
   }
 
   ngOnInit() {

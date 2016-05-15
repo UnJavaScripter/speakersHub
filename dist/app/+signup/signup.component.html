@@ -1,4 +1,6 @@
-<p>
-  signup works!
-  <app-speaker-form></app-speaker-form>
-</p>
+  
+<div *ngIf="!userAuth.name">
+  Please log in using a third party provider (check your browser's popup policy) or try again.
+</div>
+
+<app-signup-form [userData]="userAuth" *ngIf="userAuth.name"></app-signup-form>

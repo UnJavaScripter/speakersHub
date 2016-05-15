@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { DataServiceService } from '../data-service.service'
 import { AngularFire } from 'angularfire2';
 
+
 @Component({
   moduleId: module.id,
   selector: 'app-search-form',
@@ -18,6 +19,7 @@ export class SearchFormComponent implements OnInit {
 
   constructor(public af: AngularFire, public ds: DataServiceService) {
     this.countries = ds.getCountries();
+
   }
 
   ngOnInit() {

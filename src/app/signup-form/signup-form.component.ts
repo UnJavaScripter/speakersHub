@@ -1,6 +1,6 @@
 import { Component, OnInit, Input, OnChanges, SimpleChange } from '@angular/core';
 import { AngularFire, FirebaseListObservable, AuthProviders, AuthMethods } from 'angularfire2';
-import { DataServiceService } from '../data-service.service'
+import { DataServiceService } from '../data-service.service';
 
 
 @Component({

@@ -1,13 +1,15 @@
 import { Component, OnInit } from '@angular/core';
 import { AngularFire, FirebaseListObservable, AuthProviders, AuthMethods } from 'angularfire2';
 import { SignupFormComponent } from '../signup-form';
+import { UserServiceService } from '../user-service.service';
 
 @Component({
   moduleId: module.id,
   selector: 'app-signup',
   templateUrl: 'signup.component.html',
   styleUrls: ['signup.component.css', '../speakers-hub.component.css'],
-  directives: [SignupFormComponent]
+  directives: [SignupFormComponent],
+  providers: [UserServiceService]
 })
 
 
@@ -15,7 +17,7 @@ export class SignupComponent implements OnInit {
 
   userAuth: any = {};
 
-  constructor(public af: AngularFire) {
+  constructor(public af: AngularFire, public us: UserServiceService) {
 
     this.af.auth.subscribe(auth => {
       if (auth){
@@ -23,6 +25,7 @@ export class SignupComponent implements OnInit {
         this.userAuth.email = auth.google.email;
         this.userAuth.avatar = auth.google.profileImageURL;
         this.userAuth.id = auth.uid;
+        us.set(this.userAuth);
       }
     });
     

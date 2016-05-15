@@ -1,2 +1,15 @@
-<a [routerLink]="['/']"></a>  
+<div class="site-header" layout="row" layout-align="center center">
+  <div flex="50" flex-offset="5">Speakers Hub</div>
+  <div flex="45" layout="row" layout-align="end center">
+    <div>
+      <a [routerLink]="['/find']">Find</a>
+    </div>
+    <div flex-offset="5" >
+      <a [routerLink]="['/signup']">Sign Up</a>
+    </div>
+  </div>
+</div>
+
+<a [routerLink]="['/']"></a>
+
 <router-outlet></router-outlet>

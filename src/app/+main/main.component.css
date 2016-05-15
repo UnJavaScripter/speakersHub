@@ -1,12 +1,13 @@
 .hero {
   background: #c0392b;
   color: white;
-  height: 24em;
+  height: 22em;
   padding: 1em;
 }
 
 .hero>h2 {
   font-size: 3em;
+  text-align: center;
 }
 
 .button-cta {
@@ -44,6 +45,10 @@ section.description>.description-subheader{
   font-size: 1.8em;
   color: #C0392B;
   font-weight: 100;
+}
+
+section.description {
+  margin-bottom: 1em;
 }
 
 section.description>.steps{
